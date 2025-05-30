@@ -15,6 +15,60 @@
   />
 
   <style>
+    /* ---------- Top Bar ---------- */
+    .topbar {
+      background: #8E1B24; /* color estilo University of Chicago */
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .topbar .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.4rem 2rem;
+    }
+    .topbar .inner .top-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+    .topbar .inner .top-brand img {
+      height: 24px;
+      width: auto;
+    }
+    .topbar .inner nav {
+      flex: 1;
+      margin: 0 2rem;
+    }
+    .topbar .inner nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .topbar .inner nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .topbar .inner .social-top {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .topbar .inner .social-top a {
+      color: #fff;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    /* ---------- Main Header ---------- */
     body {
       margin: 0;
       font-family: sans-serif;
@@ -23,11 +77,11 @@
     }
     header {
       position: fixed;
-      top: 0;
+      top: 2.8rem; /* deja espacio para la topbar */
       width: 100%;
       background: #fff;
       box-shadow: none;
-      z-index: 1000;
+      z-index: 999;
     }
     nav {
       display: flex;
@@ -35,13 +89,11 @@
       align-items: center;
       padding: 1rem 2rem;
     }
-    /* Marca (solo texto) */
     .brand a {
       font-weight: bold;
       color: #000;
       text-decoration: none;
     }
-    /* Enlaces de navegación */
     .nav-links {
       list-style: none;
       display: flex;
@@ -54,7 +106,6 @@
       color: #000;
       font-weight: 500;
     }
-    /* Íconos sociales */
     .social {
       list-style: none;
       display: flex;
@@ -74,19 +125,45 @@
     .social .fa-twitter {
       color: #1DA1F2;
     }
-    /* Secciones con fondo blanco */
     section {
-      padding: 120px 2rem 2rem;
-      background: #fff;
-    }
-    /* Elimina tonos de gris */
-    #presentacion,
-    #trabajos {
+      padding: 140px 2rem 2rem; /* sube contenido bajo header */
       background: #fff;
     }
   </style>
 </head>
 <body>
+
+  <!-- Barra Superior -->
+  <div class="topbar">
+    <div class="inner">
+      <div class="top-brand">
+        <img src="/Owl_Page.png" alt="Owl Logo" />
+        <span>MIGUEL A. LIZARAZO CARRERA</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">HOME</a></li>
+          <li><a href="/research">RESEARCH</a></li>
+          <li><a href="/blog">BLOG</a></li>
+          <li><a href="/contact">CONTACT</a></li>
+        </ul>
+      </nav>
+      <ul class="social-top">
+        <li>
+          <a href="https://linkedin.com/in/mializarazoca" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/mializarazoca" target="_blank" rel="noopener">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Header Principal (después de la topbar) -->
   <header>
     <nav>
       <div class="brand">
@@ -111,6 +188,7 @@
     </nav>
   </header>
 
+  <!-- Contenido -->
   <section id="presentacion">
     <h1>MIGUEL A. LIZARAZO CARRERA</h1>
     <p>Presentación TBD.</p>
