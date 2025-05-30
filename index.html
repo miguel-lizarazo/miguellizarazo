@@ -17,7 +17,7 @@
   <style>
     /* ---------- Top Bar ---------- */
     .topbar {
-      background: #8E1B24; /* color estilo University of Chicago */
+      background: #8E1B24; /* granate estilo UChicago */
       color: #fff;
       font-size: 0.9rem;
     }
@@ -26,107 +26,61 @@
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0.4rem 2rem;
+      padding: 0.75rem 2rem;
     }
-    .topbar .inner .top-brand {
+    /* Logo y nombre a la izquierda */
+    .topbar .top-brand {
       display: flex;
       align-items: center;
       gap: 0.5rem;
       font-weight: 500;
     }
-    .topbar .inner .top-brand img {
+    .topbar .top-brand img {
       height: 24px;
       width: auto;
+      display: block;
     }
-    .topbar .inner nav {
+    /* Menú centrado */
+    .topbar nav {
       flex: 1;
-      margin: 0 2rem;
-    }
-    .topbar .inner nav ul {
       display: flex;
-      gap: 1.5rem;
+      justify-content: center;
+    }
+    .topbar nav ul {
+      display: flex;
+      gap: 2rem;
       list-style: none;
       margin: 0;
       padding: 0;
     }
-    .topbar .inner nav a {
+    .topbar nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
     }
-    .topbar .inner .social-top {
+    /* Íconos a la derecha */
+    .social-top {
       display: flex;
       gap: 1rem;
       list-style: none;
       margin: 0;
       padding: 0;
     }
-    .topbar .inner .social-top a {
+    .social-top a {
       color: #fff;
       font-size: 1.2rem;
       text-decoration: none;
     }
 
-    /* ---------- Main Header ---------- */
+    /* ---------- Secciones ---------- */
     body {
       margin: 0;
       font-family: sans-serif;
       background: #fff;
       color: #000;
     }
-    header {
-      position: fixed;
-      top: 2.8rem; /* deja espacio para la topbar */
-      width: 100%;
-      background: #fff;
-      box-shadow: none;
-      z-index: 999;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-    }
-    .brand a {
-      font-weight: bold;
-      color: #000;
-      text-decoration: none;
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-    }
-    .social {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-    .social a {
-      text-decoration: none;
-    }
-    .social i {
-      font-size: 1.75rem;
-    }
-    .social .fa-linkedin {
-      color: #0077B5;
-    }
-    .social .fa-twitter {
-      color: #1DA1F2;
-    }
     section {
-      padding: 140px 2rem 2rem; /* sube contenido bajo header */
+      padding: 120px 2rem 2rem; /* deja espacio para la topbar fija */
       background: #fff;
     }
   </style>
@@ -140,6 +94,7 @@
         <img src="/Owl_Page.png" alt="Owl Logo" />
         <span>MIGUEL A. LIZARAZO CARRERA</span>
       </div>
+
       <nav>
         <ul>
           <li><a href="/">HOME</a></li>
@@ -148,6 +103,7 @@
           <li><a href="/contact">CONTACT</a></li>
         </ul>
       </nav>
+
       <ul class="social-top">
         <li>
           <a href="https://linkedin.com/in/mializarazoca" target="_blank" rel="noopener">
@@ -162,31 +118,6 @@
       </ul>
     </div>
   </div>
-
-  <!-- Header Principal (después de la topbar) -->
-  <header>
-    <nav>
-      <div class="brand">
-        <a href="/">Miguel Lizarazo</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="/presentacion">Presentación</a></li>
-        <li><a href="/trabajos">Trabajos</a></li>
-      </ul>
-      <ul class="social">
-        <li>
-          <a href="https://linkedin.com/in/mializarazoca" target="_blank" rel="noopener">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://x.com/mializarazoca" target="_blank" rel="noopener">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
 
   <!-- Contenido -->
   <section id="presentacion">
