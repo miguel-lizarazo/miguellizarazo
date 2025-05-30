@@ -4,44 +4,117 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Miguel Lizarazo | Economist</title>
+  <!-- Font Awesome para íconos sociales -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
   <style>
-    body { margin: 0; font-family: sans-serif; }
-    header { position: fixed; top: 0; width: 100%; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-    nav ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
-    nav a { text-decoration: none; color: #333; }
-    .social i { font-size: 1.25rem; }
-    section { padding: 120px 2rem 2rem; }
-    #presentacion { background: #f5f5f5; }
-    #trabajos { background: #e5e5e5; }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    /* Marca (logo + título) */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+    .site-title {
+      font-weight: bold;
+      color: #333;
+    }
+    /* Enlaces de navegación */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    /* Íconos sociales */
+    .social {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    .social a {
+      color: #333;
+      text-decoration: none;
+    }
+    .social i {
+      font-size: 1.25rem;
+    }
+    section {
+      padding: 120px 2rem 2rem;
+    }
+    #presentacion {
+      background: #f5f5f5;
+    }
+    #trabajos {
+      background: #e5e5e5;
+    }
   </style>
 </head>
 <body>
-<header>
-  <nav>
-    <div class="brand">
-      <a href="/">
-        <img src="/Owl_Page.png" alt="Logo Miguel Lizarazo" class="logo" />
-        <span class="site-title">Miguel Lizarazo | Economist</span>
-      </a>
-    </div>
-    <ul>
-      <li><a href="#presentacion">Presentación</a></li>
-      <li><a href="#trabajos">Trabajos</a></li>
-    </ul>
-    <ul class="social">
-      <!-- tus íconos sociales -->
-    </ul>
-  </nav>
-</header>
+  <header>
+    <nav>
+      <div class="brand">
+        <a href="/">
+          <img src="/Owl_Page.png" alt="Logo Miguel Lizarazo" class="logo" />
+          <span class="site-title">Miguel Lizarazo | Economist</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#presentacion">Presentación</a></li>
+        <li><a href="#trabajos">Trabajos</a></li>
+      </ul>
+      <ul class="social">
+        <li>
+          <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/tuusuario" target="_blank" rel="noopener">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
   <section id="presentacion">
-    <h1>Miguel Lizarazo</h1>
+    <h1>¡Hola! Soy Miguel Lizarazo</h1>
     <p>Breve presentación sobre ti, tu rol y tu pasión.</p>
   </section>
+
   <section id="trabajos">
     <h2>Trabajos</h2>
     <ul>
