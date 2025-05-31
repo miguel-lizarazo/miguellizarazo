@@ -8,7 +8,7 @@
   <!-- Favicon -->
   <link rel="icon" href="/favicon_Owl.ico" type="image/x-icon" />
 
-  <!-- Font Awesome para íconos sociales -->
+  <!-- Font Awesome para íconos sociales y de moon -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -58,9 +58,10 @@
       text-decoration: none;
       font-weight: 500;
     }
-    /* Íconos a la derecha */
+    /* Íconos sociales a la derecha */
     .social-top {
       display: flex;
+      align-items: center;
       gap: 1rem;
       list-style: none;
       margin: 0;
@@ -70,6 +71,13 @@
       color: #fff;
       font-size: 1.2rem;
       text-decoration: none;
+    }
+    /* Icono de cambio de modo (luna) */
+    .dark-toggle {
+      margin-left: 1rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #fff;
     }
 
     /* ---------- Responsive para móvil ---------- */
@@ -84,6 +92,7 @@
       }
       .topbar nav {
         width: 100%;
+        margin-bottom: 0.5rem;
       }
       .topbar nav ul {
         flex-wrap: wrap;
@@ -101,10 +110,38 @@
       font-family: sans-serif;
       background: #fff;
       color: #000;
+      transition: background 0.3s, color 0.3s;
     }
     section {
       padding: 120px 2rem 2rem; /* deja espacio para la topbar fija */
       background: #fff;
+    }
+    /* Justificar y espaciar párrafos */
+    #presentacion p {
+      text-align: justify;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    /* ---------- Dark Mode ---------- */
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    body.dark-mode .topbar {
+      background: #333;
+      color: #e0e0e0;
+    }
+    body.dark-mode .topbar nav a,
+    body.dark-mode .social-top a,
+    body.dark-mode .dark-toggle {
+      color: #e0e0e0;
+    }
+    body.dark-mode section {
+      background: #121212;
+    }
+    body.dark-mode a {
+      color: #90CAF9;
     }
   </style>
 </head>
@@ -121,10 +158,9 @@
       <nav>
         <ul>
           <li><a href="/">HOME</a></li>
-          <li><a href="/blog">BLOG</a></li>
           <li><a href="/research">RESEARCH</a></li>
-          <li><a href="/blog">MAPS</a></li>
-          <li><a href="/contact">ABOUT</a></li>
+          <li><a href="/blog">BLOG</a></li>
+          <li><a href="/contact">CONTACT</a></li>
         </ul>
       </nav>
 
@@ -139,6 +175,9 @@
             <i class="fab fa-twitter"></i>
           </a>
         </li>
+        <li class="dark-toggle" id="darkToggle">
+          <i class="fas fa-moon"></i>
+        </li>
       </ul>
     </div>
   </div>
@@ -146,11 +185,35 @@
   <!-- Contenido -->
   <section id="presentacion">
     <h1>MIGUEL A. LIZARAZO CARRERA</h1>
-    <p>Miguel Andrés Lizarazo Carrera is an economist with a Master’s in Economics from the University of the Andes (2024) and a B.A. in Economics from the National University of Colombia (2019). Since December 2022, he has served as an Officer at CAF – Development Bank of Latin America and the Caribbean, where he supports the structuring and monitoring of the Planning and Development Impact Management division, including impact evaluation, budgeting, and logistics. In this role, he also contributes to implementing CAF’s 2022–2026 Corporate Strategy and leads technical cooperation initiatives to strengthen delivery units and poverty‐reduction policies across Latin America and the Caribbean.
-
-Previously, Miguel worked as a Research Assistant for a Harvard University project on inhibitory institutions, supported the National Planning Department’s Directorate General by coordinating national development priorities, and advised the Colombian Presidency’s Delivery Unit on monitoring presidential initiatives and organizing high‐level strategic workshops. Early in his career, he interned at the Central Bank of Colombia, contributing to the Inflation Report and macroeconomic analyses.
-
-Miguel has taught economics fundamentals and development courses at Refous School. His research includes working papers on the overlap of national parks, indigenous reserves, and illicit crop dynamics in Colombia, and a coauthored article on investment projects and the protection of indigenous peoples and territories (Latin American Policy, 2024).</p>
+    <p>
+      Miguel Andrés Lizarazo Carrera is an economist with a Master’s in Economics
+      from the University of the Andes (2024) and a B.A. in Economics from the
+      National University of Colombia (2019). Since December 2022, he has served
+      as an Officer at CAF – Development Bank of Latin America and the Caribbean,
+      where he supports the structuring and monitoring of the Planning and
+      Development Impact Management division, including impact evaluation,
+      budgeting, and logistics.
+    </p>
+    <p>
+      In this role, he also contributes to implementing CAF’s 2022–2026 Corporate
+      Strategy and leads technical cooperation initiatives to strengthen delivery
+      units and poverty‐reduction policies across Latin America and the Caribbean.
+      Previously, Miguel worked as a Research Assistant for a Harvard University
+      project on inhibitory institutions, supported the National Planning
+      Department’s Directorate General by coordinating national development
+      priorities, and advised the Colombian Presidency’s Delivery Unit on
+      monitoring presidential initiatives and organizing high‐level strategic
+      workshops.
+    </p>
+    <p>
+      Early in his career, he interned at the Central Bank of Colombia, contributing
+      to the Inflation Report and macroeconomic analyses. Miguel has taught economics
+      fundamentals and development courses at Refous School. His research includes
+      working papers on the overlap of national parks, indigenous reserves, and
+      illicit crop dynamics in Colombia, and a coauthored article on investment
+      projects and the protection of indigenous peoples and territories (Latin
+      American Policy, 2024).
+    </p>
   </section>
 
   <section id="trabajos">
@@ -159,5 +222,22 @@ Miguel has taught economics fundamentals and development courses at Refous Schoo
       <li>miguellizarazo15@gmail.com</li>
     </ul>
   </section>
+
+  <script>
+    // Dark Mode Toggle
+    const toggle = document.getElementById('darkToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      // Cambiar ícono
+      const icon = toggle.querySelector('i');
+      if (document.body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    });
+  </script>
 </body>
 </html>
